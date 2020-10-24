@@ -70,7 +70,7 @@ const Layout = (props) => {
 							{props.children}
 						</RoomServiceProvider>
 					) :
-						loading ? (
+						!loading ? (
 							<div className="flex flex-auto justify-center items-center">
 								<button
 									onClick={handleLogin}
@@ -83,7 +83,7 @@ const Layout = (props) => {
 							</div>
 						) : (
 							<div>
-								Content goes here
+								Loading...
 							</div>
 						)
 					}
