@@ -31,7 +31,12 @@ const ReceiverBoard = ({
 			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center justify-between px-6 border-b">
 				Basket
 
-				<i className="fa fa-truck cursor-pointer" onClick={setDetailOpen}></i>
+				<button
+					className="bg-gray-400 text-gray-700 w-12 h-10 rounded cursor-pointer"
+					onClick={setDetailOpen}
+				>
+					<i className="fa fa-truck"></i>
+				</button>
 			</h1>
 
 			<div className="px-6 pt-6 overflow-y-scroll flex-grow">
