@@ -110,8 +110,13 @@ const SupplierBoard = ({
 					return (
 						<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-supplier-board`}>
 							<div className="flex text-gray-700 p-3 items-center">
-								<h3 className="flex-grow">
-									{supplier.company}
+								<h3 className="flex-grow flex items-center">
+									{supplier.company || 'Unknown Business'}
+
+									<span className="text-gray-400 ml-3 w-3/4 inline-block truncate">
+										{/* {supplier.address || 'Unknown Location'} */}
+										4200 Northlake Blvd, Palm Beach Gardens, FL 33410
+									</span>
 								</h3>
 
 								<ul className="flex space-x-3">
