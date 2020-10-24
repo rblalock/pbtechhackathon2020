@@ -24,22 +24,27 @@ const SupplierBoard = () => {
 		const payload = {
 			name,
 			type,
-			id: (new Date().getTime) // todo - better hash
+			id: (new Date().getTime()) // todo - better hash
 		};
 
-		if (boardMap[user.uid]) {
-			boardMap[user.uid].inventory.push(payload);
+		let map;
+		if (boardMap.get(user.uid)) {
+			const inventory = boardMap.get(user.uid).inventory;
+			inventory.push(payload);
+			map = {
+				...boardMap.get(user.uid),
+				inventory
+			};
+			console.log(map);
 		} else {
-			boardMap[user.uid] = {
+			map = {
 				company: user.companyName,
 				companyId: user.uid,
 				inventory: [payload]
 			};
 		}
 
-		console.log(name, type, boardMap);
-
-		setBoardMap('board-inventory', boardMap);
+		setBoardMap(boardMap.set(user.uid, map));
 	};
 
 	return (
@@ -52,14 +57,17 @@ const SupplierBoard = () => {
 
 				<h3>Supplier board here</h3>
 				<ul>
-					{boardMap && Object.keys(boardMap).map((supplierKey) => (
-						<li key={supplierKey}>
-							<h5>{boardMap[supplierKey].companyName}</h5>
-							{boardMap[supplierKey].inventory && boardMap[supplierKey].inventory.map((inventory) => (
-								<span>{inventory.name} - {inventory.type}</span>
-							))}
-						</li>
-					))}
+					{boardMap && boardMap.keys.map((supplierKey) => {
+						const supplier = boardMap.get(supplierKey);
+						return (
+							<li key={supplierKey}>
+								<h5>{supplier.companyName}</h5>
+								{supplier.inventory && supplier.inventory.map((inventory, i) => (
+									<span className="block" key={i}>{inventory.name} - {inventory.type}</span>
+								))}
+							</li>
+						)}
+					)}
 				</ul>
 			</div>
 		</>

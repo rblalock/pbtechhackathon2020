@@ -4,7 +4,7 @@ export const InventoryForm = ({
 	onSubmit
 }) => {
 	const [name, setName] = useState();
-	const [type, setType] = useState();
+	const [type, setType] = useState('bread');
 
 	const handleSave = () => {
 		if (!name || ! type) return;
