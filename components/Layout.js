@@ -19,6 +19,9 @@ const Layout = (props) => {
 
 	return (
 		<>
+			<Head>
+				<title>PB Tech Hackathon 2020</title>
+			</Head>
 			<div className="h-screen flex overflow-hidden bg-gray-100 font-body">
 				{/* SIDEBAR */}
 				<div className="flex flex-col items-center h-full shadow bg-gray-700">

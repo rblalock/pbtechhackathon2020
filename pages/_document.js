@@ -7,7 +7,6 @@ class CustomDocument extends Document {
 				<Head>
 					<meta charSet="utf-8" />
 					<meta httpEquiv="x-ua-compatible" content="ie=edge" />
-					<title>PB Tech Hackathon 2020</title>
 					<meta property="og:site_name" content="PB Tech Hackathon 2020" />
 					<meta property="og:type" content="website" />
 					<meta name="theme-color" content="#000" />
