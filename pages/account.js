@@ -29,40 +29,62 @@ const Account = () => {
 	};
 
 	return (
-		<>
-			<div>
-				Account / profile page here
-
-				{/* Org name */}
-				<div className="w-1/4">
-					<span>Logged in as: {user && user.displayName ? user.displayName : ''}</span>
-
+		<div>
+			<h1 className="text-gray-700 text-xl font-medium h-16 flex items-center px-6 border-b">
+				Account Settings
+			</h1>
+			
+			<div className="w-1/2">
+				<div className="p-6">
+					<label htmlFor="name" className="block text-gray-600 text-sm">
+						Name
+					</label>
 					<input
-						autoFocus
-						onChange={handleCompanyName}
 						type="text"
-						defaultValue={user && user.companyName}
-						className="w-full bg-transparent text-xl border-b pb-2 focus:outline-none text-blue-lighter"
-						placeholder="Provide your organization's name"
+						name="name"
+						value={user && user.displayName ? user.displayName : ''}
+						className="text-gray-700 bg-gray-300 p-3 mt-3 focus:outline-none rounded cursor-not-allowed"
+						disabled
 					/>
 				</div>
 
-				{/* Persona type */}
-				<div className="w-1/4">
-					<select onChange={handleCompanyTypeChange} defaultValue={user && user.companyType || 'receiver'} name="company_type" className="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-						<option value="supplier">Supplier</option>
-						<option value="receiver">Receiver</option>
+				<div className="px-6 pb-6">
+					<label htmlFor="organization" className="block text-gray-600 text-sm">
+						Organization
+					</label>
+					<input
+						type="text"
+						name="organization"
+						defaultValue={user && user.companyName}
+						placeholder="ACME Incorporated"
+						className="text-gray-700 bg-gray-300 p-3 mt-3 focus:outline-none rounded"
+						onChange={handleCompanyName}
+					/>
+				</div>
+
+				<div className="px-6 pb-6">
+					<label htmlFor="type" className="block text-gray-600 text-sm">
+						We are a...
+					</label>
+					<select
+						name="type"
+						defaultValue={user && user.companyType || 'receiver'}
+						className="form-select text-gray-700 bg-gray-300 p-3 mt-3 focus:outline-none rounded"
+						onChange={handleCompanyTypeChange}
+					>
+						<option value="supplier">Private Business</option>
+						<option value="receiver">Food Bank</option>
 					</select>
 				</div>
 
-				<div
-					className="w-1/4 text-center cursor-pointer text-xs ml-3 hover:bg-blue-dark text-blue-500 font-semibold mt-3 py-1 px-4 border rounded shadow"
+				<button
+					className="mx-6 bg-green-600 text-white hover:bg-green-700 p-3 rounded"
 					onClick={handleSave}
 				>
-					Save
-				</div>
+					Save Changes
+				</button>
 			</div>
-		</>
+		</div>
 	);
 };
 
