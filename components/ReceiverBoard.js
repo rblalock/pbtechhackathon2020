@@ -5,7 +5,9 @@ import { TYPES } from '../data/types';
 
 const ReceiverBoard = ({
 	boardMap,
-	setBoardMap
+	setBoardMap,
+	setDetailOpen,
+	position
 }) => {
 	const { user } = useUser();
 
@@ -25,12 +27,14 @@ const ReceiverBoard = ({
 	};
 
 	return (
-		<div className="border-r flex flex-col h-screen">
-			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center px-6 border-b">
-				My Selections
+		<div className="border-r bg-white flex flex-col h-screen absolute w-1/2 animate-position" style={{ left: position === 1 ? '50%' : '0%' }}>
+			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center justify-between px-6 border-b">
+				Basket
+
+				<i className="fa fa-truck cursor-pointer" onClick={setDetailOpen}></i>
 			</h1>
 
-			<div className="px-6 pt-6 overflow-y-scroll">
+			<div className="px-6 pt-6 overflow-y-scroll flex-grow">
 				{boardMap && boardMap.keys.map((supplierKey) => {
 					const supplier = boardMap.get(supplierKey);
 

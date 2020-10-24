@@ -23,8 +23,7 @@ const Layout = (props) => {
 				<title>PB Tech Hackathon 2020</title>
 			</Head>
 			<div className="h-screen flex overflow-hidden bg-gray-100 font-body">
-				{/* SIDEBAR */}
-				<div className="flex flex-col items-center h-full shadow bg-gray-700">
+				<div className="flex flex-col items-center h-full shadow bg-gray-700 z-50">
 					<div className="flex justify-center items-center w-16 h-16 p-4 bg-yellow-500 border-b border-gray-700">
 						<i className="far fa-bread-loaf text-2xl text-gray-700" aria-hidden></i>
 					</div>
@@ -51,7 +50,6 @@ const Layout = (props) => {
 					)}
 				</div>
 
-				{/* CONTENT AREA */}
 				<div className="flex flex-col w-full">
 					{user ? (
 						<RoomServiceProvider

@@ -108,7 +108,7 @@ const Account = () => {
 						name="address"
 						defaultValue={user && user.address}
 						placeholder="Address"
-						className="text-gray-700 bg-gray-300 p-3 mt-3 focus:outline-none rounded"
+						className="text-gray-700 bg-gray-300 w-1/2 p-3 mt-3 focus:outline-none rounded"
 						onChange={handleAddress}
 					/>
 				</div>

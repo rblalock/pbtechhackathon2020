@@ -6,7 +6,8 @@ import { InventoryForm } from '../components/forms';
 
 const SupplierBoard = ({
 	boardMap,
-	setBoardMap
+	setBoardMap,
+	position
 }) => {
 	const { user } = useUser();
 	const [expanded, setExpanded] = useState([]);
@@ -79,7 +80,7 @@ const SupplierBoard = ({
 	};
 
 	return (
-		<div className="border-r flex flex-col h-screen">
+		<div className="border-r bg-white flex flex-col h-screen absolute w-1/2 animate-position" style={{ left: position === 0 ? '0%' : '-50%' }}>
 			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center px-6 border-b">
 				Available Inventory
 			</h1>
@@ -101,7 +102,7 @@ const SupplierBoard = ({
 				<InventoryForm onSubmit={addInventory} />
 			)}
 
-			<div className="px-6 pt-6 overflow-y-scroll">
+			<div className="px-6 pt-6 overflow-y-scroll flex-grow">
 				{boardMap && boardMap.keys.map((supplierKey) => {
 					const supplier = boardMap.get(supplierKey);
 					const open = expanded.includes(supplier.companyId);
