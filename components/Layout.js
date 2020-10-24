@@ -23,25 +23,25 @@ const Layout = (props) => {
 				{/* SIDEBAR */}
 				<div className="flex flex-col items-center h-full shadow bg-gray-700">
 					<div className="flex justify-center items-center w-16 h-16 p-4 bg-yellow-500 border-b border-gray-700">
-						<i className="far fa-bread-loaf text-2xl text-gray-700"></i>
+						<i className="far fa-bread-loaf text-2xl text-gray-700" aria-hidden></i>
 					</div>
 					{user && (
 						<>
 							<ul>
 								<li className="hover:bg-gray-600">
 									<a href="/" className="flex w-16 h-16 p-4 text-white justify-center items-center">
-									<i className="far fa-columns text-2xl text-white"></i>
+									<i className="far fa-columns text-2xl text-white" aria-hidden></i>
 									</a>
 								</li>
 								<li className="hover:bg-gray-600">
 									<a href="/account" className="flex w-16 h-16 p-4 text-white justify-center items-center">
-										<i className="far fa-cog text-2xl text-white"></i>
+										<i className="far fa-cog text-2xl text-white" aria-hidden></i>
 									</a>
 								</li>
 							</ul>
 							<div className="mt-auto h-16 flex items-center w-full cursor-pointer hover:bg-gray-600">
 								<a onClick={handleLogout} className="flex w-16 h-16 p-4 text-white justify-center items-center">
-									<i className="far fa-sign-out text-2xl text-white"></i>
+									<i className="far fa-sign-out text-2xl text-white" aria-hidden></i>
 								</a>
 							</div>
 						</>
