@@ -5,14 +5,9 @@ import { useUser } from '../data/firebase';
 import { InventoryForm } from '../components/forms';
 
 const Board = () => {
-	const { user } = useUser();
-	// in prod. we'd need to figure out which room and id's to use
-	const [supplierMap, setSupplierMap] = useMap('main-room', 'supplier-board');
-	const [receiverMap, setReceiverMap] = useMap('main-room', 'receiver-board');
-
 	return (
 		<div className="flex">
-			<SupplierBoard data={supplierMap} />
+			<SupplierBoard />
 			<ReceiverBoard />
 		</div>
 	);
@@ -20,24 +15,60 @@ const Board = () => {
 
 export default Board;
 
-const SupplierBoard = ({
-	data
-}) => {
+const SupplierBoard = () => {
+	// in prod. we'd need to figure out which room and id's to use
+	const [boardMap, setBoardMap] = useMap('main-room', 'board-inventory');
+	const { user } = useUser();
+
 	const addInventory = (name, type) => {
-		console.log('addInventory todo', name, type);
+		const payload = {
+			name,
+			type,
+			id: (new Date().getTime) // todo - better hash
+		};
+
+		if (boardMap[user.uid]) {
+			boardMap[user.uid].inventory.push(payload);
+		} else {
+			boardMap[user.uid] = {
+				company: user.companyName,
+				companyId: user.uid,
+				inventory: [payload]
+			};
+		}
+
+		console.log(name, type, boardMap);
+
+		setBoardMap('board-inventory', boardMap);
 	};
 
 	return (
 		<>
 			{/* Add inventory */}
 			<div>
-				<InventoryForm onSubmit={addInventory} />
+				{user && user.companyType === 'supplier' && (
+					<InventoryForm onSubmit={addInventory} />
+				)}
+
+				<h3>Supplier board here</h3>
+				<ul>
+					{boardMap && Object.keys(boardMap).map((supplierKey) => (
+						<li key={supplierKey}>
+							<h5>{boardMap[supplierKey].companyName}</h5>
+							{boardMap[supplierKey].inventory && boardMap[supplierKey].inventory.map((inventory) => (
+								<span>{inventory.name} - {inventory.type}</span>
+							))}
+						</li>
+					))}
+				</ul>
 			</div>
 		</>
 	);
 };
 
 const ReceiverBoard = () => {
+	const [boardMap, setBoardMap] = useMap('main-room', 'board-inventory');
+
 	return (
 		<>
 			receiver board here
