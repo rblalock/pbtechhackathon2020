@@ -4,7 +4,7 @@ export const InventoryForm = ({
 	onSubmit
 }) => {
 	const [name, setName] = useState();
-	const [type, setType] = useState();
+	const [type, setType] = useState('bread');
 
 	const handleSave = () => {
 		if (!name || ! type) return;
@@ -29,10 +29,10 @@ export const InventoryForm = ({
 			</select>
 
 			<div
-				className="w-1/4 text-center cursor-pointer text-xs ml-3 hover:bg-blue-dark text-blue-500 font-semibold mt-3 py-1 px-4 border rounded shadow"
+				className="w-32 text-center cursor-pointer text-xs hover:bg-blue-dark text-blue-500 font-semibold mt-3 py-1 px-4 border rounded shadow"
 				onClick={handleSave}
 			>
-				Save
+				Add
 			</div>
 		</div>
 	);
