@@ -7,33 +7,38 @@ export const InventoryForm = ({
 	const [type, setType] = useState('bread');
 
 	const handleSave = () => {
-		if (!name || ! type) return;
+		if (!type) return;
 
-		onSubmit(name, type);
+		onSubmit(name || 'Unknown', type);
 	};
 
 	return (
-		<div>
-			<input
-				autoFocus
-				onChange={(e) => setName(e.target.value)}
-				type="text"
-				defaultValue=""
-				className="w-full bg-transparent text-xl border-b pb-2 focus:outline-none text-blue-lighter"
-				placeholder="Name the item you're donating"
-			/>
-
-			<select onChange={(e) => setType(e.target.value)} defaultValue="bread" name="inventory_type" className="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+		<div className="px-6 py-3 border-b flex items-center">
+			<select
+				name="type"
+				defaultValue="bread"
+				className="form-select text-gray-700 bg-gray-300 p-3 focus:outline-none rounded"
+				onChange={(e) => setType(e.target.value)}
+			>
 				<option value="bread">Bread</option>
 				<option value="dairy">Dairy</option>
 			</select>
 
-			<div
-				className="w-32 text-center cursor-pointer text-xs hover:bg-blue-dark text-blue-500 font-semibold mt-3 py-1 px-4 border rounded shadow"
+			<input
+				type="text"
+				name="quantity"
+				defaultValue=""
+				placeholder="Quantity"
+				className="text-gray-700 bg-gray-300 p-3 ml-3 focus:outline-none rounded"
+				onChange={(e) => setName(e.target.value)}
+			/>
+
+			<button
+				className="ml-3 bg-green-600 text-white hover:bg-green-700 p-3 rounded"
 				onClick={handleSave}
 			>
 				Add
-			</div>
+			</button>
 		</div>
 	);
 };
