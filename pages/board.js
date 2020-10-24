@@ -7,10 +7,16 @@ import SupplierBoard from '../components/SupplierBoard';
 import ReceiverBoard from '../components/ReceiverBoard';
 
 const Board = () => {
+	const [boardMap, setBoardMap] = useMap('main-room', 'board-inventory');
+
 	return (
 		<div className="flex">
-			<SupplierBoard />
-			<ReceiverBoard />
+			{boardMap && (
+				<>
+					<SupplierBoard boardMap={boardMap} setBoardMap={setBoardMap} />
+					<ReceiverBoard boardMap={boardMap} setBoardMap={setBoardMap} />
+				</>
+			)}
 		</div>
 	);
 };

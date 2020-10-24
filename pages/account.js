@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useUser } from '../data/firebase';
 
 const Account = () => {
 	const { user, updateUser } = useUser();
 	const [companyName, setCompanyName] = useState();
-	const [companyType, setCompanyType] = useState();
+	const [companyType, setCompanyType] = useState('receiver');
 	
 	const handleCompanyName = (e) => {
 		setCompanyName(e.target.value);
@@ -27,6 +27,12 @@ const Account = () => {
 
 		await updateUser(payload);
 	};
+
+	useEffect(() => {
+		if (user && user.companyType) {
+			setCompanyType(user.companyType);
+		}
+	}, [user]);
 
 	return (
 		<div>
