@@ -91,6 +91,7 @@ export const useUser = () => {
 					fetchUser(firebaseUser);
 				} else {
 					setUser(undefined);
+					setLoading(false);
 				}
 			});
 		} catch (error) {
