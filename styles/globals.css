@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;700;800;900&display=swap');
+@import url('./all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Site styles here */
