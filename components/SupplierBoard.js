@@ -1,13 +1,13 @@
 import React from 'react';
-import { useMap } from '@roomservice/react';
 
 import { useUser } from '../data/firebase';
 import { InventoryForm } from '../components/forms';
 
 
-const SupplierBoard = () => {
-	// in prod. we'd need to figure out which room and id's to use
-	const [boardMap, setBoardMap] = useMap('main-room', 'board-inventory');
+const SupplierBoard = ({
+	boardMap,
+	setBoardMap
+}) => {
 	const { user } = useUser();
 
 	const addInventory = (name, type) => {
@@ -48,6 +48,24 @@ const SupplierBoard = () => {
 		setBoardMap(boardMap.set(user.uid, map));
 	};
 
+	const grabInventory = (supplierKey, index) => {
+		const inventory = boardMap.get(supplierKey).inventory;
+		inventory[index] = {
+			...inventory[index],
+			recipient: {
+				company: user.companyName,
+				companyId: user.uid,
+			}
+		};
+
+		const map = {
+			...boardMap.get(supplierKey),
+			inventory
+		};
+
+		setBoardMap(boardMap.set(supplierKey, map));
+	};
+
 	return (
 		<>
 			{/* Add inventory */}
@@ -61,13 +79,20 @@ const SupplierBoard = () => {
 					{boardMap && boardMap.keys.map((supplierKey) => {
 						const supplier = boardMap.get(supplierKey);
 						return (
-							<li key={supplierKey}>
+							<li key={`${supplierKey}-supplier-board`}>
 								<h5>{supplier.companyName}</h5>
 								{supplier.inventory && supplier.inventory.map((inventory, i) => (
-									<div key={i}>
-										<span>{inventory.name} - {inventory.type}</span>
-										{user && user.companyType === 'supplier' && (
-											<span onClick={() => deleteInventory(i)}> - DELETE ME</span>
+									<div key={`${i}-basket-inventory-${supplierKey}`}>
+										{!inventory.recipient && (
+											<>
+												<span>{inventory.name} - {inventory.type}</span>
+												{user && user.companyType === 'supplier' && user.uid === supplierKey && (
+													<span onClick={() => deleteInventory(i)}> - DELETE ME</span>
+												)}
+												{user && user.companyType === 'receiver' && (
+													<span onClick={() => grabInventory(supplierKey, i)}> - GRAB ME</span>
+												)}
+											</>
 										)}
 									</div>
 								))}

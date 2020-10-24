@@ -77,6 +77,7 @@ export const useUser = () => {
 
 	const fetchUser = async (user) => {
 		const userInfo = await getUserInfo();
+		// Merge firebase and account info as the user
 		setUser({
 			...user,
 			...userInfo
