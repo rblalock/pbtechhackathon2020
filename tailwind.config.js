@@ -17,6 +17,9 @@ module.exports = {
 			screens: {
 				'xxl': '1500px',
 			},
+			colors: {
+				'brown': '#BB9C8A'
+			},
 		},
 	},
 	variants: {},
