@@ -12,8 +12,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				display: ['Inter var', ...defaultTheme.fontFamily.sans],
-				body: ['Lato', ...defaultTheme.fontFamily.sans],
+				body: ['Inter', ...defaultTheme.fontFamily.sans],
 			},
 			screens: {
 				'xxl': '1500px',
