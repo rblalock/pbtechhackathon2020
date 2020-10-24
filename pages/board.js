@@ -35,7 +35,6 @@ const SupplierBoard = () => {
 				...boardMap.get(user.uid),
 				inventory
 			};
-			console.log(map);
 		} else {
 			map = {
 				company: user.companyName,
@@ -43,6 +42,18 @@ const SupplierBoard = () => {
 				inventory: [payload]
 			};
 		}
+
+		setBoardMap(boardMap.set(user.uid, map));
+	};
+
+	const deleteInventory = (index) => {
+		const inventory = boardMap.get(user.uid).inventory;
+		inventory.splice(index, 1);
+
+		const map = {
+			...boardMap.get(user.uid),
+			inventory
+		};
 
 		setBoardMap(boardMap.set(user.uid, map));
 	};
@@ -63,7 +74,10 @@ const SupplierBoard = () => {
 							<li key={supplierKey}>
 								<h5>{supplier.companyName}</h5>
 								{supplier.inventory && supplier.inventory.map((inventory, i) => (
-									<span className="block" key={i}>{inventory.name} - {inventory.type}</span>
+									<div key={i}>
+										<span>{inventory.name} - {inventory.type}</span>
+										<span onClick={() => deleteInventory(i)}> - DELETE ME</span>
+									</div>
 								))}
 							</li>
 						)}
