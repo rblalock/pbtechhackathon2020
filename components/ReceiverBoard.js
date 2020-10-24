@@ -1,10 +1,13 @@
 import React from 'react';
 
 import { useUser } from '../data/firebase';
+import { TYPES } from '../data/types';
 
 const ReceiverBoard = ({
 	boardMap,
-	setBoardMap
+	setBoardMap,
+	setDetailOpen,
+	position
 }) => {
 	const { user } = useUser();
 
@@ -24,12 +27,19 @@ const ReceiverBoard = ({
 	};
 
 	return (
-		<div className="border-r flex flex-col h-screen">
-			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center px-6 border-b">
-				My Selections
+		<div className="border-r bg-white flex flex-col h-screen absolute w-1/2 animate-position" style={{ left: position === 1 ? '50%' : '0%' }}>
+			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center justify-between px-6 border-b">
+				Basket
+
+				<button
+					className="bg-gray-400 text-gray-700 w-12 h-10 rounded cursor-pointer"
+					onClick={setDetailOpen}
+				>
+					<i className="fa fa-truck"></i>
+				</button>
 			</h1>
 
-			<div className="px-6 pt-6 overflow-y-scroll">
+			<div className="px-6 pt-6 overflow-y-scroll flex-grow">
 				{boardMap && boardMap.keys.map((supplierKey) => {
 					const supplier = boardMap.get(supplierKey);
 
@@ -37,15 +47,15 @@ const ReceiverBoard = ({
 						<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-receiver-board`}>
 							<div className="flex text-gray-700 p-3 items-center">
 								<h3 className="flex-grow">
-									{supplier.companyName}
+									{supplier.company}
 								</h3>
 							</div>
 
 							<div className="flex flex-col">
 	 							{supplier.inventory && supplier.inventory.filter(inventory => inventory.recipient).map((inventory, i) => (
 									<div className="flex border-t" key={`${i}-supplier-inventory-${supplierKey}`}>
-										<div className="flex items-center justify-center bg-brown text-white h-16 w-10 text-xl">
-											<i className="fa fa-wheat" aria-hidden></i>
+										<div className={`flex items-center justify-center bg-${TYPES[inventory.type].color} text-white h-16 w-10 text-xl`}>
+											<i className={`fa fa-${TYPES[inventory.type].icon}`} aria-hidden></i>
 										</div>
 
 										<div className="flex flex-col flex-grow justify-center h-16 mx-3">
