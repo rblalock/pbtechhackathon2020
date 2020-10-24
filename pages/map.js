@@ -1,11 +1,13 @@
 import React from 'react';
+import MapView from '../components/MapView';
 
 const Map = () => {
 	return (
 		<div className="flex">
-			Map goes here!
+			<MapView />
 		</div>
 	);
 };
 
 export default Map;
+

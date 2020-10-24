@@ -12,6 +12,12 @@ class CustomDocument extends Document {
 					<meta name="theme-color" content="#000" />
 					<link rel="shortcut icon" href="/favicon.png" />
 					<script src="https://kit.fontawesome.com/177f8f663d.js" crossOrigin="anonymous"></script>
+					<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+					<link
+						rel="stylesheet"
+						href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+						type="text/css"
+					/>
 				</Head>
 				<body>
 					<Main />
