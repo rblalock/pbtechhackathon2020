@@ -54,8 +54,10 @@ const ReceiverBoard = ({
 			<div className="px-6 pt-6 overflow-y-scroll flex-grow">
 				{boardMap && boardMap.keys.map((supplierKey) => {
 					const supplier = boardMap.get(supplierKey);
+					const inventory = supplier.inventory.filter(inventory => inventory.recipient);
+					const hasInventory = inventory.length > 0;
 
-					return (
+					return hasInventory && (
 						<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-receiver-board`}>
 							<div className="flex text-gray-700 p-3 items-center">
 								<h3 className="flex-grow flex items-space">
@@ -69,7 +71,7 @@ const ReceiverBoard = ({
 							</div>
 
 							<div className="flex flex-col">
-	 							{supplier.inventory && supplier.inventory.filter(inventory => inventory.recipient).map((inventory, i) => (
+	 							{inventory.map((inventory, i) => (
 									<div className="flex border-t" key={`${i}-supplier-inventory-${supplierKey}`}>
 										<div className={`flex items-center justify-center bg-${TYPES[inventory.type].color} text-white h-16 w-10 text-xl`}>
 											<i className={`fa fa-${TYPES[inventory.type].icon}`} aria-hidden></i>
