@@ -208,6 +208,29 @@ const Site = () => {
 								</div>
 							</div>
 							{/* End Item */}
+
+							{/* Item */}
+							<div className="flex border-t">
+								<div className="flex items-center justify-center bg-red-700 text-white h-16 w-10 text-xl">
+									<i className="fa fa-steak" aria-hidden></i>
+								</div>
+
+								<div className="flex flex-col flex-grow justify-center h-16 mx-3">
+									<h4 className="text-gray-700">
+										Meat
+									</h4>
+
+									<h6 className="text-gray-500">
+										Unknown
+									</h6>
+								</div>
+
+								<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
+									<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
+									<i className="far fa-times cursor-pointer" aria-hidden></i>
+								</div>
+							</div>
+							{/* End Item */}
 						</div>
 					</div>
 					{/* End Expanded Row */}
