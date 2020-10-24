@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useUser } from '../data/firebase';
+import { TYPES } from '../data/types';
 
 const ReceiverBoard = ({
 	boardMap,
@@ -37,15 +38,15 @@ const ReceiverBoard = ({
 						<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-receiver-board`}>
 							<div className="flex text-gray-700 p-3 items-center">
 								<h3 className="flex-grow">
-									{supplier.companyName}
+									{supplier.company}
 								</h3>
 							</div>
 
 							<div className="flex flex-col">
 	 							{supplier.inventory && supplier.inventory.filter(inventory => inventory.recipient).map((inventory, i) => (
 									<div className="flex border-t" key={`${i}-supplier-inventory-${supplierKey}`}>
-										<div className="flex items-center justify-center bg-brown text-white h-16 w-10 text-xl">
-											<i className="fa fa-wheat" aria-hidden></i>
+										<div className={`flex items-center justify-center bg-${TYPES[inventory.type].color} text-white h-16 w-10 text-xl`}>
+											<i className={`fa fa-${TYPES[inventory.type].icon}`} aria-hidden></i>
 										</div>
 
 										<div className="flex flex-col flex-grow justify-center h-16 mx-3">
