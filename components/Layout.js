@@ -5,8 +5,8 @@ import { RoomServiceProvider } from "@roomservice/react";
 import { useUser, login, logout } from '../data/firebase';
 
 const Layout = (props) => {
-	const { user, loading } = useUser();
 	// todo - user should look up any extra data about the company, etc.
+	const { user, loading } = useUser();
 	const router = useRouter();
 
 	const handleLogin = async () => {
@@ -25,15 +25,22 @@ const Layout = (props) => {
 
 			<div className="h-screen flex overflow-hidden bg-gray-100">
 				{/* SIDEBAR */}
-				<div className="flex flex-shrink-0">
-					Sidebar goes here
-					{user && (
-						<div onClick={handleLogout}>Log out button here</div>
+				<div className="flex-shrink-0 h-screen bg-gray-300 w-64">
+					<div>Sidebar goes here</div>
+					{user ? (
+						<button onClick={handleLogout} className="bg-blue-500 p-3 rounded-lg font-bold text-blue-900 w-32 h-12">
+							Logout
+						</button>
+					) : (
+						<div onClick={handleLogin} className="bg-blue-500 p-3 rounded-lg font-bold text-blue-900 w-32 h-12">
+							<i className="fab fa-google mr-3"></i>
+							Login
+						</div>
 					)}
 				</div>
 
 				{/* CONTENT AREA */}
-				<div className="flex flex-col w-0 flex-1 overflow-hidden">
+				<div className="flex flex-col w-full">
 					{user ? (
 						<RoomServiceProvider
 							clientParameters={{
@@ -45,9 +52,11 @@ const Layout = (props) => {
 						</RoomServiceProvider>
 					) :
 						loading ? (
-							<>Loading...</>
+							<div>Loading...</div>
 						) : (
-							<div onClick={handleLogin}>Login form here</div>
+							<div>
+								Please login
+							</div>
 						)
 					}
 				</div>
