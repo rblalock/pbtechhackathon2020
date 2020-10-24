@@ -4,6 +4,7 @@ import { useUser } from '../data/firebase';
 const Account = () => {
 	const { user, updateUser } = useUser();
 	const [companyName, setCompanyName] = useState();
+	const [address, setAddress] = useState();
 	const [companyType, setCompanyType] = useState('receiver');
 	
 	const handleCompanyName = (e) => {
@@ -13,16 +14,20 @@ const Account = () => {
 	const handleCompanyTypeChange = (e) => {
 		setCompanyType(e.target.value);
 	};
+	const handleAddress = (e) => {
+		setAddress(e.target.value);
+	};
 
 	const handleSave = async () => {
-		console.log('todo - handleSave', companyName, companyType);
+		console.log('todo - handleSave', companyName, companyType, address);
 		if (!companyName || !companyType) {
 			return;
 		}
 
 		const payload = {
 			companyName,
-			companyType
+			companyType,
+			address
 		};
 
 		await updateUser(payload);
@@ -31,6 +36,12 @@ const Account = () => {
 	useEffect(() => {
 		if (user && user.companyType) {
 			setCompanyType(user.companyType);
+		}
+		if (user && user.companyName) {
+			setCompanyName(user.companyName);
+		}
+		if (user && user.address) {
+			setAddress(user.address);
 		}
 	}, [user]);
 
@@ -81,6 +92,20 @@ const Account = () => {
 						<option value="supplier">Private Business</option>
 						<option value="receiver">Food Bank</option>
 					</select>
+				</div>
+
+				<div className="px-6 pb-6">
+					<label htmlFor="organization" className="block text-gray-600 text-sm">
+						Address
+					</label>
+					<input
+						type="text"
+						name="address"
+						defaultValue={user && user.address}
+						placeholder="Address"
+						className="text-gray-700 bg-gray-300 p-3 mt-3 focus:outline-none rounded"
+						onChange={handleAddress}
+					/>
 				</div>
 
 				<button
