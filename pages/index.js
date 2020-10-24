@@ -49,24 +49,12 @@ const Site = () => {
 								<li className="flex items-center text-brown">
 									<i className="fa fa-wheat" aria-hidden></i>
 								</li>
-								<li className="flex items-center text-red-500">
-									<i className="fa fa-apple-alt" aria-hidden></i>
-								</li>
 								<li className="flex items-center text-orange-500">
 									<i className="fa fa-carrot" aria-hidden></i>
 								</li>
-								<li className="flex items-center text-yellow-500">
-									<i className="fa fa-cheese-swiss" aria-hidden></i>
-								</li>
-								<li className="flex items-center text-blue-500">
-									<i className="fa fa-fish" aria-hidden></i>
-								</li>
-								<li className="flex items-center text-red-700">
-									<i className="fa fa-steak" aria-hidden></i>
-								</li>
 							</ul>
 
-							<button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded">
+							<button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded">
 								<i className="fa fa-caret-up" aria-hidden></i>
 							</button>
 						</div>
@@ -89,7 +77,7 @@ const Site = () => {
 									</h6>
 								</div>
 
-								<div className="flex items-center text-gray-600 text-xl mr-4 space-x-4">
+								<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
 									<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
 									<i className="far fa-plus cursor-pointer" aria-hidden></i>
 								</div>
@@ -112,7 +100,7 @@ const Site = () => {
 									</h6>
 								</div>
 
-								<div className="flex items-center text-gray-600 text-xl mr-4 space-x-4">
+								<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
 									<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
 									<i className="far fa-plus cursor-pointer" aria-hidden></i>
 								</div>
@@ -150,7 +138,7 @@ const Site = () => {
 								</li>
 							</ul>
 
-							<button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded">
+							<button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded">
 								<i className="fa fa-caret-down" aria-hidden></i>
 							</button>
 						</div>
@@ -158,29 +146,123 @@ const Site = () => {
 					{/* End Row */}
 
 					{/* Test Rows */}
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
-					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-6 h-6 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
+					<div className="border rounded mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><ul className="flex space-x-3"><li className="flex items-center text-brown"><i className="fa fa-wheat" aria-hidden></i></li><li className="flex items-center text-red-500"><i className="fa fa-apple-alt" aria-hidden></i></li><li className="flex items-center text-orange-500"><i className="fa fa-carrot" aria-hidden></i></li><li className="flex items-center text-yellow-500"><i className="fa fa-cheese-swiss" aria-hidden></i></li><li className="flex items-center text-blue-500"><i className="fa fa-fish" aria-hidden></i></li><li className="flex items-center text-red-700"><i className="fa fa-steak" aria-hidden></i></li></ul><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-caret-down" aria-hidden></i></button></div></div>
 					{/* End Test Rows */}
 				</div>
 			</div>
 
-			<div className="">
-				<h1 className="text-gray-700 text-xl font-medium h-16 flex items-center px-6 border-b">
+			<div className="border-r flex flex-col h-screen">
+				<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center px-6 border-b">
 					My Selections
 				</h1>
+
+				<div className="px-6 pt-6 overflow-y-scroll">
+					{/* Expanded Row */}
+					<div className="border rounded overflow-hidden mb-6">
+						{/* Heading */}
+						<div className="flex text-gray-700 p-3 items-center">
+							<h3 className="flex-grow">
+								Publix #459
+							</h3>
+
+							<button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded">
+								<i className="fa fa-truck" aria-hidden></i>
+							</button>
+						</div>
+
+						{/* Items */}
+						<div className="flex flex-col">
+							{/* Item */}
+							<div className="flex border-t">
+								<div className="flex items-center justify-center bg-blue-500 text-white h-16 w-10 text-xl">
+									<i className="fa fa-fish" aria-hidden></i>
+								</div>
+
+								<div className="flex flex-col flex-grow justify-center h-16 mx-3">
+									<h4 className="text-gray-700">
+										Fish
+									</h4>
+
+									<h6 className="text-gray-500">
+										Unknown
+									</h6>
+								</div>
+
+								<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
+									<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
+									<i className="far fa-times cursor-pointer" aria-hidden></i>
+								</div>
+							</div>
+							{/* End Item */}
+						</div>
+					</div>
+					{/* End Expanded Row */}
+
+					{/* Expanded Row */}
+					<div className="border rounded overflow-hidden mb-6">
+						{/* Heading */}
+						<div className="flex text-gray-700 p-3 items-center">
+							<h3 className="flex-grow">
+								Publix #459
+							</h3>
+
+							<button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded">
+								<i className="fa fa-truck" aria-hidden></i>
+							</button>
+						</div>
+
+						{/* Items */}
+						<div className="flex flex-col">
+							{/* Item */}
+							<div className="flex border-t">
+								<div className="flex items-center justify-center bg-yellow-500 text-white h-16 w-10 text-xl">
+									<i className="fa fa-cheese-swiss" aria-hidden></i>
+								</div>
+
+								<div className="flex flex-col flex-grow justify-center h-16 mx-3">
+									<h4 className="text-gray-700">
+										Cheese
+									</h4>
+
+									<h6 className="text-gray-500">
+										1 Palette
+									</h6>
+								</div>
+
+								<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
+									<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
+									<i className="far fa-times cursor-pointer" aria-hidden></i>
+								</div>
+							</div>
+							{/* End Item */}
+						</div>
+					</div>
+					{/* End Expanded Row */}
+
+					{/* Test Rows */}
+					<div className="border rounded overflow-hidden mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-truck" aria-hidden></i></button></div><div className="flex flex-col"><div className="flex border-t"><div className="flex items-center justify-center bg-yellow-500 text-white h-16 w-10 text-xl"><i className="fa fa-cheese-swiss" aria-hidden></i></div><div className="flex flex-col flex-grow justify-center h-16 mx-3"><h4 className="text-gray-700">Cheese</h4><h6 className="text-gray-500">1 Palette</h6></div><div className="flex items-center text-gray-600 text-xl mr-5 space-x-5"><i className="far fa-comments-alt cursor-pointer" aria-hidden></i><i className="far fa-times cursor-pointer" aria-hidden></i></div></div></div></div>
+					<div className="border rounded overflow-hidden mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-truck" aria-hidden></i></button></div><div className="flex flex-col"><div className="flex border-t"><div className="flex items-center justify-center bg-yellow-500 text-white h-16 w-10 text-xl"><i className="fa fa-cheese-swiss" aria-hidden></i></div><div className="flex flex-col flex-grow justify-center h-16 mx-3"><h4 className="text-gray-700">Cheese</h4><h6 className="text-gray-500">1 Palette</h6></div><div className="flex items-center text-gray-600 text-xl mr-5 space-x-5"><i className="far fa-comments-alt cursor-pointer" aria-hidden></i><i className="far fa-times cursor-pointer" aria-hidden></i></div></div></div></div>
+					<div className="border rounded overflow-hidden mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-truck" aria-hidden></i></button></div><div className="flex flex-col"><div className="flex border-t"><div className="flex items-center justify-center bg-yellow-500 text-white h-16 w-10 text-xl"><i className="fa fa-cheese-swiss" aria-hidden></i></div><div className="flex flex-col flex-grow justify-center h-16 mx-3"><h4 className="text-gray-700">Cheese</h4><h6 className="text-gray-500">1 Palette</h6></div><div className="flex items-center text-gray-600 text-xl mr-5 space-x-5"><i className="far fa-comments-alt cursor-pointer" aria-hidden></i><i className="far fa-times cursor-pointer" aria-hidden></i></div></div></div></div>
+					<div className="border rounded overflow-hidden mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-truck" aria-hidden></i></button></div><div className="flex flex-col"><div className="flex border-t"><div className="flex items-center justify-center bg-yellow-500 text-white h-16 w-10 text-xl"><i className="fa fa-cheese-swiss" aria-hidden></i></div><div className="flex flex-col flex-grow justify-center h-16 mx-3"><h4 className="text-gray-700">Cheese</h4><h6 className="text-gray-500">1 Palette</h6></div><div className="flex items-center text-gray-600 text-xl mr-5 space-x-5"><i className="far fa-comments-alt cursor-pointer" aria-hidden></i><i className="far fa-times cursor-pointer" aria-hidden></i></div></div></div></div>
+					<div className="border rounded overflow-hidden mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-truck" aria-hidden></i></button></div><div className="flex flex-col"><div className="flex border-t"><div className="flex items-center justify-center bg-yellow-500 text-white h-16 w-10 text-xl"><i className="fa fa-cheese-swiss" aria-hidden></i></div><div className="flex flex-col flex-grow justify-center h-16 mx-3"><h4 className="text-gray-700">Cheese</h4><h6 className="text-gray-500">1 Palette</h6></div><div className="flex items-center text-gray-600 text-xl mr-5 space-x-5"><i className="far fa-comments-alt cursor-pointer" aria-hidden></i><i className="far fa-times cursor-pointer" aria-hidden></i></div></div></div></div>
+					<div className="border rounded overflow-hidden mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-truck" aria-hidden></i></button></div><div className="flex flex-col"><div className="flex border-t"><div className="flex items-center justify-center bg-yellow-500 text-white h-16 w-10 text-xl"><i className="fa fa-cheese-swiss" aria-hidden></i></div><div className="flex flex-col flex-grow justify-center h-16 mx-3"><h4 className="text-gray-700">Cheese</h4><h6 className="text-gray-500">1 Palette</h6></div><div className="flex items-center text-gray-600 text-xl mr-5 space-x-5"><i className="far fa-comments-alt cursor-pointer" aria-hidden></i><i className="far fa-times cursor-pointer" aria-hidden></i></div></div></div></div>
+					<div className="border rounded overflow-hidden mb-6"><div className="flex text-gray-700 p-3 items-center"><h3 className="flex-grow">Publix #459</h3><button className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"><i className="fa fa-truck" aria-hidden></i></button></div><div className="flex flex-col"><div className="flex border-t"><div className="flex items-center justify-center bg-yellow-500 text-white h-16 w-10 text-xl"><i className="fa fa-cheese-swiss" aria-hidden></i></div><div className="flex flex-col flex-grow justify-center h-16 mx-3"><h4 className="text-gray-700">Cheese</h4><h6 className="text-gray-500">1 Palette</h6></div><div className="flex items-center text-gray-600 text-xl mr-5 space-x-5"><i className="far fa-comments-alt cursor-pointer" aria-hidden></i><i className="far fa-times cursor-pointer" aria-hidden></i></div></div></div></div>
+					{/* End Test Rows */}
+				</div>
 			</div>
 		</div>
 	);
