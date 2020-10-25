@@ -15,6 +15,7 @@ module.exports = withBundleAnalyzer({
 		FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET,
 		FIREBASE_MESSAGE_SENDER_ID: process.env.FIREBASE_MESSAGE_SENDER_ID,
 		FIRSEBASE_APP_I: process.env.FIRSEBASE_APP_ID,
-		MAPS_KEY: process.env.MAPS_KEY
+		MAPS_KEY: process.env.MAPS_KEY,
+		VIDEO_URL: process.env.VIDEO_URL
 	}
 });

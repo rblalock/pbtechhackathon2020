@@ -46,7 +46,7 @@ const ReceiverBoard = ({
 		window.callFrame = window.DailyIframe.createFrame();
 		window.callFrame.on("left-meeting", () => window.callFrame.destroy());
 		window.callFrame.join({
-			url: "https://pbtech2020hackathon.daily.co/l74oIHqy5KBRyLmXWpLR",
+			url: process.env.VIDEO_URL,
 			showLeaveButton: true
 		});
 	};
