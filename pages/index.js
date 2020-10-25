@@ -8,7 +8,7 @@ import Modal from '../components/Modal';
 
 const Site = () => {
 	const [boardMap, setBoardMap] = useMap('main-room', 'board-inventory');
-	const [onlineStatuses, setMyOnlineStatus] = usePresence('main-room', 'users');
+	const [onlineStatuses, setMyOnlineStatus] = usePresence('userRoom', 'users');
 	const [detailOpen, _setDetailOpen] = useState(false);
 	const { user } = useUser();
 
@@ -19,20 +19,19 @@ const Site = () => {
 	useEffect(() => {
 		if (user) {
 			setMyOnlineStatus({
-				id: user.companyId,
+				id: user.uid,
 				name: user.companyName,
 				displayName: user.displayName
 			});
 		}
 	}, [user]);
 
-	console.log(onlineStatuses);
-
 	return (
 		<div className="grid grid-cols-2 h-screen relative">
 			{boardMap && (
 				<>
 					<SupplierBoard
+						onlineUsers={onlineStatuses}
 						boardMap={boardMap}
 						setBoardMap={setBoardMap}
 						position={detailOpen ? -1 : 0}

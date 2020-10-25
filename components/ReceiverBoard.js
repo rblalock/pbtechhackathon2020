@@ -85,7 +85,7 @@ const ReceiverBoard = ({
 								});
 
 								return Object.keys(recipients).map((key) => {
-									const recipientAccount = users.find((user) => user.id === key);
+									const recipientAccount = users && users.find((user) => user.id === key);
 
 									return (
 										<div className="border rounded overflow-hidden mb-6" key={`${key}-receiver-board`}>

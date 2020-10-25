@@ -7,7 +7,8 @@ import { InventoryForm } from '../components/forms';
 const SupplierBoard = ({
 	boardMap,
 	setBoardMap,
-	position
+	position,
+	onlineUsers
 }) => {
 	const { user } = useUser();
 	const { users } = useUsers();
@@ -187,19 +188,21 @@ const SupplierBoard = ({
 								const open = expanded.includes(supplier.companyId);
 								const inventory = supplier.inventory.filter(inventory => !inventory.recipient);
 								const hasInventory = filters.length > 0 ? inventory.filter(inventory => filters.includes(inventory.type)).length > 0 : inventory.length > 0;
-		
+								console.log(onlineUsers, supplierKey);
 								return hasInventory && (
 									<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-supplier-board`}>
 										<div className="flex text-gray-700 p-3 items-center">
-											<div
-												className="flex items-center text-gray-500 mr-2 cursor-pointer"
-												onClick={() => videoInit()}
-											>
-												<span className="flex">
-													<span className="animate-ping absolute h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
-													<span className="relative rounded-full h-3 w-3 bg-green-500"></span>
-												</span>
-											</div>
+											{onlineUsers[`user-${supplierKey}`] && (
+												<div
+													className="flex items-center text-gray-500 mr-2 cursor-pointer"
+													onClick={() => videoInit()}
+												>
+													<span className="flex">
+														<span className="animate-ping absolute h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
+														<span className="relative rounded-full h-3 w-3 bg-green-500"></span>
+													</span>
+												</div>
+											)}
 
 											<h3 className="whitespace-no-wrap">
 												{supplierAccount && supplierAccount.companyName || 'Unknown Business'}
