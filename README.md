@@ -1,3 +1,7 @@
+<p align="left">
+  <img width="100" src="https://pbtechhackathon2020.vercel.app/toast.png">
+</p>
+
 # 🌴 Palm Beach Tech Hackathon 2020 🏝 
 
 ## 🤔 Why
@@ -16,13 +20,17 @@ and those that want to acquire the food (NGO's, food banks, etc).
 
 This project uses the following stack to deliver on the proposed entry:
 
-- Vercel
-- TailwindCSS
-- NextJS
-- roomservice.dev
-- Firebase
-- MapBox
-- daily.co
+- [Vercel](http://vercel.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [NextJS](https://nextjs.org/)
+- [roomservice.dev](https://www.roomservice.dev/)
+- [Firebase](https://firebase.google.com/)
+- [MapBox](mapbox.com)
+- [daily.co](https://www.daily.co/)
+
+<p align="center">
+  <img width="100" src="https://pbtechhackathon2020.vercel.app/demo.gif">
+</p>
 
 ## 👟 Run this yourself
 
@@ -45,6 +53,7 @@ generate in the `ENV file` section below
 ```
 
 **NOTE** - You don't want to leave it this way in production, this is just to get you up and running fast.
+[Read more about this feature](https://firebase.google.com/docs/firestore/security/get-started)
 
 
 ### ENV file
