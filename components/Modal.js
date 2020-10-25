@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
-import { useUser } from '../data/firebase';
+import { useUser, useUsers } from '../data/firebase';
+import MapView from '../components/MapView';
 
-const ReceiverBoard = ({
-	position
+const Modal = ({
+	position,
+	boardMap
 }) => {
 	const { user } = useUser();
+	const { users } = useUsers();
+	const destinations = useMemo(() => {
+		const destinationStops = [];
+		if (position === 1 && boardMap && user && users) {
+			boardMap.keys.forEach((key) => {
+				const supplier = boardMap.get(key);
+				const found = supplier.inventory && supplier.inventory.find(inventory => {
+					if (inventory.recipient) {
+						return inventory.recipient.companyId === user.uid;
+					} else {
+						return false;
+					}
+				});
+				if (found) {
+					const company = users.find(u => u.id === key);
+					if (company.address) {
+						destinationStops.push(users.find(u => u.id === key));
+					}
+				}
+			});
+		}
+		return destinationStops;
+	}, [boardMap, user, users, position]);
 
 	return (
 		<div className="border-r bg-white flex flex-col h-screen absolute w-1/2 animate-position" style={{ left: position === 2 ? '100%' : '50%' }}>
@@ -17,11 +42,13 @@ const ReceiverBoard = ({
 				</button>
 			</h1>
 
-			<div className="flex-grow">
-				Map goes here
-			</div>
+			{position === 1 && user && user.address && (
+				<div className="flex-grow">
+					<MapView destinations={destinations} address={user && user.address} />
+				</div>
+			)}
 		</div>
 	);
 };
 
-export default ReceiverBoard;
+export default Modal;
