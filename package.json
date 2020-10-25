@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@mapbox/mapbox-gl-directions": "^4.1.0",
+		"@mapbox/mapbox-sdk": "^0.11.0",
 		"@roomservice/browser": "2.0.1",
 		"@roomservice/react": "^0.8.4",
 		"@tailwindcss/typography": "^0.2.0",
