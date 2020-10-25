@@ -103,10 +103,6 @@ const ReceiverBoard = ({
 												<h3 className="whitespace-no-wrap flex-grow">
 													{recipientAccount && recipientAccount.companyName || 'Unknown Business'}
 												</h3>
-
-												<span className="text-green-500 ml-3 truncate">
-													On Their Way
-												</span>
 											</div>
 
 											<div className="flex flex-col">
