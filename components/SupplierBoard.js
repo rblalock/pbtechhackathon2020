@@ -91,75 +91,50 @@ const SupplierBoard = ({
 		}
 	};
 
-	console.log(filters);
-
 	return (
 		<div className="border-r bg-white flex flex-col h-screen absolute w-1/2 animate-position" style={{ left: position === 0 ? '0%' : '-50%' }}>
 			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center px-6 border-b">
-				Available Inventory
+				{user && user.companyType === 'supplier' ? 'My' : 'Available'} Inventory
 			</h1>
 
-			<div className="px-6 py-3 border-b flex items-center">
-				<i className="fa fa-filter text-gray-500 mr-6" aria-hidden></i>
-				<ul className="flex space-x-2">
-					{
-						Object.keys(TYPES).map((name) => (
-							<li
-								className={`flex items-center p-2 rounded cursor-pointer ${filters.includes(name) ? `bg-${TYPES[name].color} text-white` : 'bg-gray-300 text-gray-500'}`}
-								key={`filter-${name}`}
-								onClick={() => toggleFilters(name)}
-							>
-								<i className={`fa fa-${TYPES[name].icon}`} aria-hidden></i>
-							</li>
-						))
-					}
-				</ul>
-			</div>
-
-			{user && user.companyType === 'supplier' && (
-				<InventoryForm onSubmit={addInventory} />
+			{user && (
+				<>
+					{user.companyType === 'supplier' ? (
+						<InventoryForm onSubmit={addInventory} />
+					) : (
+						<div className="px-6 py-3 border-b flex items-center">
+							<i className="fa fa-filter text-gray-500 mr-6" aria-hidden></i>
+							<ul className="flex space-x-2">
+								{
+									Object.keys(TYPES).map((name) => (
+										<li
+											className={`flex items-center p-2 rounded cursor-pointer ${filters.includes(name) ? `bg-${TYPES[name].color} text-white` : 'bg-gray-300 text-gray-500'}`}
+											key={`filter-${name}`}
+											onClick={() => toggleFilters(name)}
+										>
+											<i className={`fa fa-${TYPES[name].icon}`} aria-hidden></i>
+										</li>
+									))
+								}
+							</ul>
+						</div>
+					)}
+				</>
 			)}
 
-			{boardMap && (
+			{boardMap && user && (
 				<div className="px-6 pt-6 overflow-y-scroll flex-grow">
-					{boardMap.keys.map((supplierKey) => {
-						const supplier = boardMap.get(supplierKey);
-						const open = expanded.includes(supplier.companyId);
-						const inventory = supplier.inventory.filter(inventory => !inventory.recipient);
-						const hasInventory = filters.length > 0 ? inventory.filter(inventory => filters.includes(inventory.type)).length > 0 : inventory.length > 0;
-
-						return hasInventory && (
-							<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-supplier-board`}>
-								<div className="flex text-gray-700 p-3 items-center">
-									<h3 className="flex-grow flex items-center">
-										{supplier.company || 'Unknown Business'}
-
-										<span className="text-gray-400 ml-3 max-w-3/4 inline-block truncate">
-											{/* {supplier.address || 'Unknown Location'} */}
-											4200 Northlake Blvd, Palm Beach Gardens, FL 33410
-										</span>
-									</h3>
-
-									<ul className="flex space-x-3">
+					{user.companyType === 'supplier' ? (
+						<>
+							{boardMap.keys.filter(supplier => supplier === user.uid).map((supplierKey) => {
+								const supplier = boardMap.get(supplierKey);
+								const inventory = supplier.inventory.filter(inventory => !inventory.recipient);
+								const hasInventory = inventory.length > 0;
+		
+								return hasInventory && (
+									<React.Fragment key={`basket-inventory-${supplierKey}`}>
 										{inventory.map((inventory, i) => (
-											<li className={`flex items-center text-${TYPES[inventory.type].color}`} key={`${i}-basket-icon-${supplierKey}`}>
-												<i className={`fa fa-${TYPES[inventory.type].icon}`} aria-hidden></i>
-											</li>
-										))}
-									</ul>
-
-									<button
-										className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"
-										onClick={() => toggleExpand(supplier.companyId)}
-									>
-										<i className={`fa fa-caret-${open ? 'up' : 'down'}`} aria-hidden></i>
-									</button>
-								</div>
-
-								{open && (
-									<div className="flex flex-col">
-										{inventory.map((inventory, i) => (
-											<div className="flex border-t" key={`${i}-basket-inventory-${supplierKey}`}>
+											<div className="border rounded overflow-hidden mb-6 flex" key={`${inventory.type}-basket-inventory-${supplierKey}`}>
 												<div className={`flex items-center justify-center bg-${TYPES[inventory.type].color} text-white h-16 w-10 text-xl`}>
 													<i className={`fa fa-${TYPES[inventory.type].icon}`} aria-hidden></i>
 												</div>
@@ -185,11 +160,83 @@ const SupplierBoard = ({
 												</div>
 											</div>
 										))}
+									</React.Fragment>
+								);
+							})}
+						</>
+					) : (
+						<>
+							{boardMap.keys.map((supplierKey) => {
+								const supplier = boardMap.get(supplierKey);
+								const open = expanded.includes(supplier.companyId);
+								const inventory = supplier.inventory.filter(inventory => !inventory.recipient);
+								const hasInventory = filters.length > 0 ? inventory.filter(inventory => filters.includes(inventory.type)).length > 0 : inventory.length > 0;
+		
+								return hasInventory && (
+									<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-supplier-board`}>
+										<div className="flex text-gray-700 p-3 items-center">
+											<h3 className="flex-grow flex items-center">
+												{supplier.company || 'Unknown Business'}
+		
+												<span className="text-gray-400 ml-3 max-w-3/4 inline-block truncate">
+													{/* {supplier.address || 'Unknown Location'} */}
+													4200 Northlake Blvd, Palm Beach Gardens, FL 33410
+												</span>
+											</h3>
+		
+											<ul className="flex space-x-3">
+												{inventory.map((inventory, i) => (
+													<li className={`flex items-center text-${TYPES[inventory.type].color}`} key={`${i}-basket-icon-${supplierKey}`}>
+														<i className={`fa fa-${TYPES[inventory.type].icon}`} aria-hidden></i>
+													</li>
+												))}
+											</ul>
+		
+											<button
+												className="bg-gray-400 text-gray-700 w-8 h-8 ml-6 rounded"
+												onClick={() => toggleExpand(supplier.companyId)}
+											>
+												<i className={`fa fa-caret-${open ? 'up' : 'down'}`} aria-hidden></i>
+											</button>
+										</div>
+		
+										{open && (
+											<div className="flex flex-col">
+												{inventory.map((inventory, i) => (
+													<div className="flex border-t" key={`${i}-basket-inventory-${supplierKey}`}>
+														<div className={`flex items-center justify-center bg-${TYPES[inventory.type].color} text-white h-16 w-10 text-xl`}>
+															<i className={`fa fa-${TYPES[inventory.type].icon}`} aria-hidden></i>
+														</div>
+		
+														<div className="flex flex-col flex-grow justify-center h-16 mx-3">
+															<h4 className="text-gray-700">
+																{inventory.type}
+															</h4>
+		
+															<h6 className="text-gray-500">
+																{inventory.name}
+															</h6>
+														</div>
+		
+														<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
+															<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
+															{user && user.companyType === 'supplier' && user.uid === supplierKey && (
+																<i className="far fa-times cursor-pointer" aria-hidden onClick={() => deleteInventory(i)}></i>
+															)}
+															{user && user.companyType === 'receiver' && (
+																<i className="far fa-plus cursor-pointer" aria-hidden onClick={() => grabInventory(supplierKey, i)}></i>
+															)}
+														</div>
+													</div>
+												))}
+											</div>
+										)}
 									</div>
-								)}
-							</div>
-						);
-					})}
+								);
+							})}
+						</>
+					)}
+					
 				</div>
 			)}
 		</div>

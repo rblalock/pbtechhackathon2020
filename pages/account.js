@@ -6,6 +6,7 @@ const Account = () => {
 	const [companyName, setCompanyName] = useState();
 	const [address, setAddress] = useState();
 	const [companyType, setCompanyType] = useState();
+	const [loading, setLoading] = useState(false);
 	
 	const handleCompanyName = (e) => {
 		setCompanyName(e.target.value);
@@ -20,7 +21,8 @@ const Account = () => {
 	};
 
 	const handleSave = async () => {
-		console.log('todo - handleSave', companyName, companyType, address);
+		setLoading(true);
+		
 		if (!companyName || !companyType || companyType === '') {
 			return;
 		}
@@ -32,6 +34,8 @@ const Account = () => {
 		};
 
 		await updateUser(payload);
+
+		setLoading(false);
 	};
 
 	useEffect(() => {
@@ -45,8 +49,6 @@ const Account = () => {
 			setAddress(user.address);
 		}
 	}, [user]);
-
-	console.log(companyType);
 
 	return (
 		<div>
@@ -114,10 +116,12 @@ const Account = () => {
 				</div>
 
 				<button
-					className="mx-6 bg-green-600 text-white hover:bg-green-700 p-3 rounded"
+					className="mx-6 bg-green-600 text-white hover:bg-green-700 p-3 w-40 rounded"
 					onClick={handleSave}
 				>
-					Save Changes
+					{loading ? (
+						<i className="fa fa-spinner fa-spin"></i>
+					) : 'Save Changes'}
 				</button>
 			</div>
 		</div>
