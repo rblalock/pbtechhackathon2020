@@ -47,7 +47,7 @@ const ReceiverBoard = ({
 			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center justify-between px-6 border-b">
 				{user && user.companyType === 'supplier' ? 'Scheduled Pickups' : 'Basket'}
 
-				{user && user.companyType === 'recipient' && (
+				{user && user.companyType === 'receiver' && (
 					<button
 						className="bg-gray-400 hover:bg-gray-500 text-gray-700 w-12 h-10 rounded cursor-pointer"
 						onClick={setDetailOpen}
