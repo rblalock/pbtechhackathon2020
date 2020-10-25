@@ -35,7 +35,9 @@ export const login = async () => {
 		const ref = db.collection('accounts').doc(results.user.uid);
 		const record = await ref.get();
 		if (!record.exists) {
-			await ref.set({});
+			await ref.set({
+				companyType: 'receiver'
+			});
 		}
 	} catch (error) {
 		throw new Error(error);
