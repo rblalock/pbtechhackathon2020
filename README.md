@@ -29,7 +29,7 @@ This project uses the following stack to deliver on the proposed entry:
 - [daily.co](https://www.daily.co/)
 
 <p align="center">
-  <img width="100" src="https://pbtechhackathon2020.vercel.app/demo.gif">
+  <img src="https://pbtechhackathon2020.vercel.app/demo.gif">
 </p>
 
 ## 👟 Run this yourself
