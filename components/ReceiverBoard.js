@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useUser } from '../data/firebase';
+import { useUser, useUsers } from '../data/firebase';
 import { TYPES } from '../data/types';
 
 const ReceiverBoard = ({
@@ -10,6 +10,7 @@ const ReceiverBoard = ({
 	position
 }) => {
 	const { user } = useUser();
+	const { users } = useUsers();
 
 	const returnInventory = (supplierKey, index) => {
 		const inventory = boardMap.get(supplierKey).inventory;
@@ -52,8 +53,9 @@ const ReceiverBoard = ({
 			</h1>
 
 			<div className="px-6 pt-6 overflow-y-scroll flex-grow">
-				{boardMap && boardMap.keys.map((supplierKey) => {
+				{boardMap && users && boardMap.keys.map((supplierKey) => {
 					const supplier = boardMap.get(supplierKey);
+					const supplierAccount = users.find((user) => user.id === supplierKey);
 					const inventory = supplier.inventory.filter(inventory => inventory.recipient);
 					const hasInventory = inventory.length > 0;
 
@@ -61,11 +63,10 @@ const ReceiverBoard = ({
 						<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-receiver-board`}>
 							<div className="flex text-gray-700 p-3 items-center">
 								<h3 className="flex-grow flex items-space">
-									{supplier.company || 'Unknown Business'}
+									{supplierAccount && supplierAccount.companyName || 'Unknown Business'}
 
 									<span className="text-gray-400 ml-3 inline-block truncate">
-										{/* {supplier.address || 'Unknown Location'} */}
-										4200 Northlake Blvd, Palm Beach Gardens, FL 33410
+										{supplierAccount && supplierAccount.address || 'Unknown Location'}
 									</span>
 								</h3>
 							</div>

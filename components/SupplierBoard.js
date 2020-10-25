@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useUser } from '../data/firebase';
+import { useUser, useUsers } from '../data/firebase';
 import { TYPES } from '../data/types';
 import { InventoryForm } from '../components/forms';
 
@@ -10,6 +10,7 @@ const SupplierBoard = ({
 	position
 }) => {
 	const { user } = useUser();
+	const { users } = useUsers();
 	const [filters, setFilters] = useState([]);
 	const [expanded, setExpanded] = useState([]);
 
@@ -91,8 +92,6 @@ const SupplierBoard = ({
 		}
 	};
 
-	console.log(filters);
-
 	return (
 		<div className="border-r bg-white flex flex-col h-screen absolute w-1/2 animate-position" style={{ left: position === 0 ? '0%' : '-50%' }}>
 			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center px-6 border-b">
@@ -120,10 +119,11 @@ const SupplierBoard = ({
 				<InventoryForm onSubmit={addInventory} />
 			)}
 
-			{boardMap && (
+			{boardMap && users && (
 				<div className="px-6 pt-6 overflow-y-scroll flex-grow">
 					{boardMap.keys.map((supplierKey) => {
 						const supplier = boardMap.get(supplierKey);
+						const supplierAccount = users.find((user) => user.id === supplierKey);
 						const open = expanded.includes(supplier.companyId);
 						const inventory = supplier.inventory.filter(inventory => !inventory.recipient);
 						const hasInventory = filters.length > 0 ? inventory.filter(inventory => filters.includes(inventory.type)).length > 0 : inventory.length > 0;
@@ -132,11 +132,10 @@ const SupplierBoard = ({
 							<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-supplier-board`}>
 								<div className="flex text-gray-700 p-3 items-center">
 									<h3 className="flex-grow flex items-center">
-										{supplier.company || 'Unknown Business'}
+										{supplierAccount && supplierAccount.companyName || 'Unknown Business'}
 
 										<span className="text-gray-400 ml-3 max-w-3/4 inline-block truncate">
-											{/* {supplier.address || 'Unknown Location'} */}
-											4200 Northlake Blvd, Palm Beach Gardens, FL 33410
+											{supplierAccount && supplierAccount.address || 'Unknown Location'}
 										</span>
 									</h3>
 

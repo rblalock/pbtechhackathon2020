@@ -103,3 +103,35 @@ export const useUser = () => {
 
 	return { user, loading, updateUser }
 };
+
+export const useUsers = () => {
+	const [users, setUsers] = useState();
+	const [loading, setLoading] = useState(true);
+
+	const fetchUsers = async (user) => {
+		try {
+			const db = firebaseApp().firestore();
+			const ref = db.collection('accounts');
+			const docs = await ref.get();
+			const users = [];
+			docs?.forEach((doc) => {
+				const data = doc.data();
+				users.push({
+					...data,
+					id: doc.id
+				});
+			});
+
+			setUsers(users);
+			setLoading(false);
+		} catch (err) {
+			throw new Error(err);
+		}
+	};
+
+	useEffect(() => {
+		fetchUsers();
+	}, []);
+
+	return { users, loading }
+};

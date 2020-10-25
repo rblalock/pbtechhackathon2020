@@ -8,6 +8,7 @@ const MapView = () => {
 	const getWaypoint = async (address) => {
 		// Probably should do this every time....lulz
 		const MapBoxClientLib = (await import('@mapbox/mapbox-sdk')).default;
+		// Ref. https://github.com/mapbox/mapbox-sdk-js/blob/main/docs/services.md#forwardgeocode
 		const MapBoxGeocodeClientLib = (await import('@mapbox/mapbox-sdk/services/geocoding')).default;
 		const mapboxClient = MapBoxClientLib({ accessToken: process.env.MAPS_KEY });
 		const geocodeService = MapBoxGeocodeClientLib(mapboxClient);
