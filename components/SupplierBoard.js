@@ -40,9 +40,12 @@ const SupplierBoard = ({
 		setBoardMap(boardMap.set(user.uid, map));
 	};
 
-	const deleteInventory = (index) => {
+	const deleteInventory = (id) => {
 		const inventory = boardMap.get(user.uid).inventory;
-		inventory.splice(index, 1);
+		const idx = inventory.findIndex(inv => id === inv.id);
+		if (idx !== undefined) {
+			inventory.splice(idx, 1);
+		}
 
 		const map = {
 			...boardMap.get(user.uid),
@@ -52,15 +55,18 @@ const SupplierBoard = ({
 		setBoardMap(boardMap.set(user.uid, map));
 	};
 
-	const grabInventory = (supplierKey, index) => {
+	const grabInventory = (supplierKey, id) => {
 		const inventory = boardMap.get(supplierKey).inventory;
-		inventory[index] = {
-			...inventory[index],
-			recipient: {
-				company: user.companyName,
-				companyId: user.uid,
-			}
-		};
+		const idx = inventory.findIndex(inv => id === inv.id);
+		if (idx !== undefined) {
+			inventory[idx] = {
+				...inventory[idx],
+				recipient: {
+					company: user.companyName,
+					companyId: user.uid,
+				}
+			};
+		}
 
 		const map = {
 			...boardMap.get(supplierKey),
@@ -153,10 +159,10 @@ const SupplierBoard = ({
 												<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
 													<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
 													{user && user.companyType === 'supplier' && user.uid === supplierKey && (
-														<i className="far fa-times cursor-pointer" aria-hidden onClick={() => deleteInventory(i)}></i>
+														<i className="far fa-times cursor-pointer" aria-hidden onClick={() => deleteInventory(inventory.id)}></i>
 													)}
 													{user && user.companyType === 'receiver' && (
-														<i className="far fa-plus cursor-pointer" aria-hidden onClick={() => grabInventory(supplierKey, i)}></i>
+														<i className="far fa-plus cursor-pointer" aria-hidden onClick={() => grabInventory(supplierKey, inventory.id)}></i>
 													)}
 												</div>
 											</div>
@@ -222,10 +228,10 @@ const SupplierBoard = ({
 														<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
 															<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
 															{user && user.companyType === 'supplier' && user.uid === supplierKey && (
-																<i className="far fa-times cursor-pointer" aria-hidden onClick={() => deleteInventory(i)}></i>
+																<i className="far fa-times cursor-pointer" aria-hidden onClick={() => deleteInventory(inventory.id)}></i>
 															)}
 															{user && user.companyType === 'receiver' && (
-																<i className="far fa-plus cursor-pointer" aria-hidden onClick={() => grabInventory(supplierKey, i)}></i>
+																<i className="far fa-plus cursor-pointer" aria-hidden onClick={() => grabInventory(supplierKey, inventory.id)}></i>
 															)}
 														</div>
 													</div>
