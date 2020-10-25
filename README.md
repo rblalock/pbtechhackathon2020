@@ -4,6 +4,8 @@
 
 # 🌴 Palm Beach Tech Hackathon 2020 🏝 
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Frblalock%2Fpbtechhackathon2020&env=FIREBASE_API_KEY,FIREBASE_AUTH_DOMAIN,FIREBASE_DATABASE_URL,FIREBASE_PROJECT_ID,FIREBASE_STORAGE_BUCKET,FIREBASE_MESSAGE_SENDER_ID,FIRSEBASE_APP_ID,ROOMSERVICE,MAPS_KEY,VIDEO_URL)
+
 ## 🤔 Why
 
 [52 million tons of food end up thrown away.  30-40% of food produced in the US, $218b worth,
@@ -78,7 +80,11 @@ VIDEO_URL=...
 ```
 
 Likewise, if you're going to run this on something like Vercel, you'll need to make sure these vars
-are filled out in the Vercel project's settings.
+are filled out in the Vercel project's settings.  If you click the Vercel deployment below we'll stub these vars our for you:
+
+#### Deploy on Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Frblalock%2Fpbtechhackathon2020&env=FIREBASE_API_KEY,FIREBASE_AUTH_DOMAIN,FIREBASE_DATABASE_URL,FIREBASE_PROJECT_ID,FIREBASE_STORAGE_BUCKET,FIREBASE_MESSAGE_SENDER_ID,FIRSEBASE_APP_ID,ROOMSERVICE,MAPS_KEY,VIDEO_URL)
 
 ### Run it
 
