@@ -42,6 +42,15 @@ const ReceiverBoard = ({
 		setBoardMap(boardMap.set(supplierKey, map));
 	};
 
+	const videoInit = () => {
+		window.callFrame = window.DailyIframe.createFrame();
+		window.callFrame.on("left-meeting", () => window.callFrame.destroy());
+		window.callFrame.join({
+			url: "https://pbtech2020hackathon.daily.co/l74oIHqy5KBRyLmXWpLR",
+			showLeaveButton: true
+		});
+	};
+
 	return (
 		<div className="border-r bg-white flex flex-col h-screen absolute w-1/2 animate-position" style={{ left: position === 1 ? '50%' : '0%' }}>
 			<h1 className="text-gray-700 text-xl font-medium h-16 flex-none flex items-center justify-between px-6 border-b">
@@ -81,12 +90,18 @@ const ReceiverBoard = ({
 									return (
 										<div className="border rounded overflow-hidden mb-6" key={`${key}-receiver-board`}>
 											<div className="flex text-gray-700 p-3 items-center">
-												<h3 className="flex-grow flex items-space">
-													{recipientAccount && recipientAccount.companyName || 'Unknown Business'}
-
-													<span className="text-gray-400 ml-3 inline-block truncate">
-														{recipientAccount && recipientAccount.address || 'Unknown Location'}
+												<div
+													className="flex items-center text-gray-500 mr-2 cursor-pointer"
+													onClick={() => videoInit()}
+												>
+													<span className="flex">
+														<span className="animate-ping absolute h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
+														<span className="relative rounded-full h-3 w-3 bg-green-500"></span>
 													</span>
+												</div>
+
+												<h3 className="whitespace-no-wrap">
+													{recipientAccount && recipientAccount.companyName || 'Unknown Business'}
 												</h3>
 											</div>
 
@@ -129,13 +144,23 @@ const ReceiverBoard = ({
 								return hasInventory && (
 									<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-receiver-board`}>
 										<div className="flex text-gray-700 p-3 items-center">
-											<h3 className="flex-grow flex items-space">
-												{supplierAccount && supplierAccount.companyName || 'Unknown Business'}
-
-												<span className="text-gray-400 ml-3 inline-block truncate">
-													{supplierAccount && supplierAccount.address || 'Unknown Location'}
+											<div
+												className="flex items-center text-gray-500 mr-2 cursor-pointer"
+												onClick={() => videoInit()}
+											>
+												<span className="flex">
+													<span className="animate-ping absolute h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
+													<span className="relative rounded-full h-3 w-3 bg-green-500"></span>
 												</span>
+											</div>
+
+											<h3 className="whitespace-no-wrap">
+												{supplierAccount && supplierAccount.companyName || 'Unknown Business'}
 											</h3>
+
+											<span className="flex-grow text-gray-400 ml-3 truncate">
+												{supplierAccount && supplierAccount.address || 'Unknown Location'}
+											</span>
 										</div>
 
 										<div className="flex flex-col">

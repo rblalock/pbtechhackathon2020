@@ -166,7 +166,6 @@ const SupplierBoard = ({
 												</div>
 
 												<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
-													<i className="far fa-video cursor-pointer" aria-hidden></i>
 													{user && user.companyType === 'supplier' && user.uid === supplierKey && (
 														<i className="far fa-times cursor-pointer" aria-hidden onClick={() => deleteInventory(inventory.id)}></i>
 													)}
