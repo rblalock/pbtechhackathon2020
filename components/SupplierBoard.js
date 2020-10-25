@@ -188,7 +188,6 @@ const SupplierBoard = ({
 								const open = expanded.includes(supplier.companyId);
 								const inventory = supplier.inventory.filter(inventory => !inventory.recipient);
 								const hasInventory = filters.length > 0 ? inventory.filter(inventory => filters.includes(inventory.type)).length > 0 : inventory.length > 0;
-								console.log(supplierAccount, user.uid);
 		
 								return hasInventory && (
 									<div className="border rounded overflow-hidden mb-6" key={`${supplierKey}-supplier-board`}>

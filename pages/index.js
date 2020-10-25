@@ -1,17 +1,32 @@
-import React, { useState } from 'react';
-import { useMap } from '@roomservice/react';
+import React, { useState, useEffect } from 'react';
+import { useMap, usePresence } from '@roomservice/react';
 
+import { useUser } from '../data/firebase';
 import SupplierBoard from '../components/SupplierBoard';
 import ReceiverBoard from '../components/ReceiverBoard';
 import Modal from '../components/Modal';
 
 const Site = () => {
 	const [boardMap, setBoardMap] = useMap('main-room', 'board-inventory');
+	const [onlineStatuses, setMyOnlineStatus] = usePresence('main-room', 'users');
 	const [detailOpen, _setDetailOpen] = useState(false);
+	const { user } = useUser();
 
 	const setDetailOpen = () => {
 		_setDetailOpen(!detailOpen);
 	}
+
+	useEffect(() => {
+		if (user) {
+			setMyOnlineStatus({
+				id: user.companyId,
+				name: user.companyName,
+				displayName: user.displayName
+			});
+		}
+	}, [user]);
+
+	console.log(onlineStatuses);
 
 	return (
 		<div className="grid grid-cols-2 h-screen relative">
