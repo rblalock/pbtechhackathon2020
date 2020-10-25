@@ -28,9 +28,11 @@ const Layout = (props) => {
 						<i className="far fa-bread-loaf text-2xl text-gray-700" aria-hidden></i>
 					</a>
 					<ul>
-						<li className="h-16 w-16 flex items-center justify-center cursor-pointer hover:bg-gray-600">
-							<i className="far fa-columns text-2xl text-white" aria-hidden></i>
-						</li>
+						<a href="/">
+							<li className="h-16 w-16 flex items-center justify-center cursor-pointer hover:bg-gray-600">
+								<i className="far fa-columns text-2xl text-white" aria-hidden></i>
+							</li>
+						</a>
 					</ul>
 					{user && (
 						<>
