@@ -156,7 +156,6 @@ const ReceiverBoard = ({
 													</div>
 
 													<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
-														<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
 														{position === 1 ? (
 															<i className="far fa-minus cursor-pointer" aria-hidden onClick={() => returnInventory(supplierKey, inventory.id)}></i>
 														) : (

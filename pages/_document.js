@@ -18,6 +18,7 @@ class CustomDocument extends Document {
 						href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
 						type="text/css"
 					/>
+					<script crossOrigin="anonymous" src="https://unpkg.com/@daily-co/daily-js"></script>
 				</Head>
 				<body>
 					<Main />
