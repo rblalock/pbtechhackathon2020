@@ -100,9 +100,13 @@ const ReceiverBoard = ({
 													</span>
 												</div>
 
-												<h3 className="whitespace-no-wrap">
+												<h3 className="whitespace-no-wrap flex-grow">
 													{recipientAccount && recipientAccount.companyName || 'Unknown Business'}
 												</h3>
+
+												<span className="text-green-500 ml-3 truncate">
+													On Their Way
+												</span>
 											</div>
 
 											<div className="flex flex-col">
@@ -120,10 +124,6 @@ const ReceiverBoard = ({
 															<h6 className="text-gray-500">
 																{inventory.name}
 															</h6>
-														</div>
-
-														<div className="flex items-center text-gray-600 text-xl mr-5 space-x-5">
-															<i className="far fa-comments-alt cursor-pointer" aria-hidden></i>
 														</div>
 													</div>
 												))}

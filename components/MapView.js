@@ -62,7 +62,7 @@ const MapView = ({
 			pitch: 45,
 		});
 		map.addControl(nav, 'top-left');
-		map.addControl(directions, 'bottom-right');
+		map.addControl(directions, 'top-right');
 
 		// Add the stops to the route
 		map.once('load', () => {
