@@ -5,7 +5,6 @@ import { RoomServiceProvider } from "@roomservice/react";
 import { useUser, login, logout } from '../data/firebase';
 
 const Layout = (props) => {
-	// todo - user should look up any extra data about the company, etc.
 	const { user, loading } = useUser();
 	const router = useRouter();
 

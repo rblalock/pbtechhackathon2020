@@ -46,7 +46,7 @@ const ReceiverBoard = ({
 		window.callFrame = window.DailyIframe.createFrame();
 		window.callFrame.on("left-meeting", () => window.callFrame.destroy());
 		window.callFrame.join({
-			url: "https://pbtech2020hackathon.daily.co/l74oIHqy5KBRyLmXWpLR",
+			url: process.env.VIDEO_URL,
 			showLeaveButton: true
 		});
 	};
@@ -103,10 +103,6 @@ const ReceiverBoard = ({
 												<h3 className="whitespace-no-wrap flex-grow">
 													{recipientAccount && recipientAccount.companyName || 'Unknown Business'}
 												</h3>
-
-												<span className="text-green-500 ml-3 truncate">
-													On Their Way
-												</span>
 											</div>
 
 											<div className="flex flex-col">
@@ -138,7 +134,7 @@ const ReceiverBoard = ({
 							{boardMap.keys.map((supplierKey) => {
 								const supplier = boardMap.get(supplierKey);
 								const supplierAccount = users.find((user) => user.id === supplierKey);
-								const inventory = supplier.inventory.filter(inventory => inventory.recipient);
+								const inventory = supplier.inventory.filter(inventory => inventory.recipient && inventory.recipient.companyId === user.uid);
 								const hasInventory = inventory.length > 0;
 
 								return hasInventory && (
