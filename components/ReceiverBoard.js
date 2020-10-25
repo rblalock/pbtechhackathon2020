@@ -138,7 +138,7 @@ const ReceiverBoard = ({
 							{boardMap.keys.map((supplierKey) => {
 								const supplier = boardMap.get(supplierKey);
 								const supplierAccount = users.find((user) => user.id === supplierKey);
-								const inventory = supplier.inventory.filter(inventory => inventory.recipient);
+								const inventory = supplier.inventory.filter(inventory => inventory.recipient && inventory.recipient.companyId === user.uid);
 								const hasInventory = inventory.length > 0;
 
 								return hasInventory && (
