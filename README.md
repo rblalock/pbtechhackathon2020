@@ -6,6 +6,8 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Frblalock%2Fpbtechhackathon2020&env=FIREBASE_API_KEY,FIREBASE_AUTH_DOMAIN,FIREBASE_DATABASE_URL,FIREBASE_PROJECT_ID,FIREBASE_STORAGE_BUCKET,FIREBASE_MESSAGE_SENDER_ID,FIRSEBASE_APP_ID,ROOMSERVICE,MAPS_KEY,VIDEO_URL)
 
+### [Watch the fireside chat with Friction Log](https://www.youtube.com/watch?v=pCuj2lUGwDw&feature=youtu.be&ab_channel=FrictionLog)
+
 ## 🤔 Why
 
 [52 million tons of food end up thrown away.  30-40% of food produced in the US, $218b worth,
